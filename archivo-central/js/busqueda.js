@@ -7,7 +7,7 @@ window.addEventListener("scroll", function () {
         navbar.classList.remove("scrolled");
     }
 });
-
+//prueba
 // ========== HAMBURGER MENU ==========
 const hamburgerMenu = document.getElementById("hamburger-menu");
 const navLinks = document.getElementById("nav-links");
