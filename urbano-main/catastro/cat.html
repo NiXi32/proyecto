@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAMsoft - Software de Catastro Municipal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/cat.css">
+    <link rel="stylesheet" href="css/chat.css">
+
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <a href="cat.html" class="logo">
+                    <img src="img/logo_siam.png" alt="SIAMsoft">
+                </a>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#caracteristicas">Características</a></li>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                        <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <!-- Barra de redes sociales - versión modificada -->
+          <div class="social-bar-container">
+              <div class="social-bar-left">
+                  <a href="https://www.facebook.com/SIAMSoftSftwareparamunicipalidades/" 
+                    target="_blank" 
+                    class="social-bar-link social-bar-facebook" 
+                    title="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                      <span class="social-bar-text">Facebook</span>
+                  </a>
+                  <a href="https://www.tiktok.com/@siamsoft_peru" 
+                    target="_blank" 
+                    class="social-bar-link social-bar-tiktok" 
+                    title="TikTok">
+                      <i class="fab fa-tiktok"></i>
+                      <span class="social-bar-text">TikTok</span>
+                  </a>
+                  <a href="https://x.com/siamsoft" 
+                    target="_blank" 
+                    class="social-bar-link social-bar-twitter" 
+                    title="Twitter">
+                      <i class="fab fa-twitter"></i>
+                      <span class="social-bar-text">Twitter</span>
+                  </a>
+                  <a href="https://www.youtube.com/@siamsoft" 
+                    target="_blank" 
+                    class="social-bar-link social-bar-youtube" 
+                    title="YouTube">
+                      <i class="fab fa-youtube"></i>
+                      <span class="social-bar-text">YouTube</span>
+                  </a>
+                  <a href="#"
+                    target="_blank" 
+                    class="social-bar-link social-bar-web" 
+                    title="Sitio Web">
+                      <i class="fas fa-globe"></i>
+                      <span class="social-bar-text">Sitio Web</span>
+                  </a>
+              </div>
+          </div>
+
+<!-- Hero Section -->
+<section class="hero" id="inicio">
+  <!-- Partículas opcionales -->
+  <div class="hero-particles" id="particles-js"></div>
+  
+  <div class="container hero-container">
+    <!-- Contenido de texto a la izquierda -->
+    <div class="hero-content">
+    <h1 class="hero-title">software de 
+    <strong>Catastro</strong> <em>urbano</em></h1>
+      <p class="hero-subtitle">Soluciones integrales para la gestión catastral urbana moderna, impulsadas por tecnología de punta</p>
+      
+      <div class="hero-cta">
+        <a href="https://wa.me/+51996909051" class="btn btn-primary">CONTÁCTANOS</a>
+        <button>
+<button id="videoBtn">
+    <span>VER VIDEO</span>
+</button>
+
+<style>
+/* Tus estilos originales se mantienen igual */
+button{
+    border: 0;
+    background: linear-gradient(150deg, #9500ff, #09f, #00ddff);
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    font-size: 18px;
+    padding: 4px;
+    cursor: pointer;
+    transition: .3s;
+}
+button span{
+    background-color: #111;
+    padding: 16px 24px;
+    border-radius: 6px;
+    transition: .3s;
+}
+button:hover span{
+    background: none;
+}
+button:active{
+    transform: scale(0.9);
+}
+</style>
+
+<div id="videoModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:1000;align-items:center;justify-content:center;">
+    <div style="position:relative;width:100%;height:100%;">
+        <span onclick="closeVideo()" style="position:absolute;top:15px;right:15px;color:white;font-size:40px;cursor:pointer;z-index:1001;background:rgba(0,0,0,0.5);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;">&times;</span>
+        <video id="localVideo" controls style="width:111%;height:130%;border-radius:0;outline:none;object-fit:cover;">
+            <source src="Video de WhatsApp 2025-08-12 a las 14.18.41_3e760efd.mp4" type="video/mp4">
+            Tu navegador no soporta el video
+        </video>
+    </div>
+</div>
+
+<script>
+let userInteracted = false;
+
+function openVideo() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('localVideo');
+    
+    modal.style.display = 'flex';
+    video.controls = true;
+    video.muted = false;
+    video.volume = 1.0;
+
+    // Intentar reproducir el video
+    if(userInteracted) {
+        video.play().catch(e => console.log("Error al reproducir:", e));
+    }
+
+    // Activar pantalla completa nativa
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) { // Safari
+        video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) { // IE/Edge
+        video.msRequestFullscreen();
+    }
+
+    document.body.style.overflow = 'hidden';
+}
+
+function closeVideo() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('localVideo');
+    
+    modal.style.display = 'none';
+    video.pause();
+    video.currentTime = 0;
+    document.body.style.overflow = 'auto';
+
+    // Salir de pantalla completa si está activo
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    }
+}
+
+document.addEventListener('click', () => {
+    userInteracted = true;
+}, {once: true});
+
+document.getElementById('videoBtn').onclick = openVideo;
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById('videoModal')) {
+        closeVideo();
+    }
+}
+</script>
+
+      </div>
+    </div>
+    
+    <!-- Imagen flotante a la derecha -->
+    <div class="hero-image-container">
+    <img src="img/fondo_6.png" alt="Software de Catastro" class="hero-image">
+    </div>
+  </div>
+</section>
+
+<!-- Script para partículas (opcional) -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  // Configuración de partículas (opcional)
+  document.addEventListener('DOMContentLoaded', function() {
+    if(document.getElementById('particles-js')) {
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 40, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          opacity: { value: 0.5, random: true },
+          size: { value: 3, random: true },
+          line_linked: { enable: false },
+          move: {
+            enable: true,
+            speed: 1,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out"
+          }
+        },
+        interactivity: { detect_on: "canvas", events: { onhover: { enable: false } } }
+      });
+    }
+  });
+</script>
+<!-- Características -->
+<section class="features" id="caracteristicas">
+    <div class="container">
+        <div class="section-title">
+            <h2>Características Principales</h2>
+            <p>Nuestro software de catastro urbano ofrece las herramientas más avanzadas para la gestión municipal</p>
+        </div>
+        <div class="features-grid">
+            <!-- Georreferenciación -->
+            <div class="feature-card geo">
+                <div class="feature-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <h3>Georreferenciación</h3>
+                <p>Ubicación exacta de cada predio con coordenadas precisas y mapas interactivos.</p>
+                <ul class="feature-details">
+                    <li>Integración con sistemas GIS</li>
+                    <li>Delimitación de lotes y manzanas</li>
+                    <li>Visualización en 2D y 3D</li>
+                </ul>
+            </div>
+            
+            <!-- Fiscalización -->
+            <div class="feature-card fiscal">
+                <div class="feature-icon">
+                    <i class="fas fa-search-dollar"></i>
+                </div>
+                <h3>Fiscalización</h3>
+                <p>Herramientas avanzadas para la detección de omisiones y evasión tributaria.</p>
+                <ul class="feature-details">
+                    <li>Alertas inteligentes</li>
+                    <li>Cruce con bases de datos</li>
+                    <li>Generación de órdenes de fiscalización</li>
+                </ul>
+            </div>
+            
+            <!-- Reportes -->
+            <div class="feature-card report">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Reportes</h3>
+                <p>Generación automática de reportes e indicadores para la toma de decisiones.</p>
+                <ul class="feature-details">
+                    <li>Más de 50 formatos predefinidos</li>
+                    <li>Exportación a Excel y PDF</li>
+                    <li>Dashboards interactivos</li>
+                </ul>
+            </div>
+            
+            <!-- Aplicación Móvil -->
+            <div class="feature-card app">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Aplicación Móvil</h3>
+                <p>Trabajo de campo eficiente con nuestra app para dispositivos móviles.</p>
+                <ul class="feature-details">
+                    <li>Disponible para Android e iOS</li>
+                    <li>Sincronización en tiempo real</li>
+                    <li>Funcionalidad offline</li>
+                </ul>
+            </div>
+            
+            <!-- Seguridad de Datos -->
+            <div class="feature-card security">
+                <div class="feature-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>Seguridad de Datos</h3>
+                <p>Protección avanzada para la información sensible de tu municipalidad.</p>
+                <ul class="feature-details">
+                    <li>Encriptación de datos</li>
+                    <li>Autenticación de dos factores</li>
+                    <li>Control de accesos por roles</li>
+                </ul>
+            </div>
+            
+            <!-- Integración SUNAT -->
+            <div class="feature-card sunat">
+                <div class="feature-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3>Integración con SUNAT</h3>
+                <p>Conexión directa con los sistemas de la Superintendencia Nacional de Aduanas y de Administración Tributaria.</p>
+                <ul class="feature-details">
+                    <li>Envío electrónico de declaraciones</li>
+                    <li>Validación automática de RUC</li>
+                    <li>Reportes en formatos oficiales</li>
+                    <li>Actualización constante de tasas y parámetros</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Beneficios -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Beneficios para tu Municipalidad</h2>
+                <p>Ventajas competitivas que obtendrás con nuestro sistema</p>
+            </div>
+            <div class="benefits-container">
+                <div class="benefits-img">
+                    <img src="img/1.png" alt="Beneficios">
+                </div>
+                <div class="benefits-content">
+                    <ul class="benefits-list">
+                        <li>Mayor recaudación tributaria</li>
+                        <li>Menor tiempo de atención al ciudadano</li>
+                        <li>Reducción de errores humanos</li>
+                        <li>Mejora en la toma de decisiones estratégicas</li>
+                        <li>Incremento en la confianza ciudadana</li>
+                        <li>Cumplimiento del Plan de Incentivos</li>
+                        <li>Reducción de evasión del impuesto predial</li>
+                        <li>Predios georreferenciados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- ========== SECCIÓN DE TESTIMONIOS ========== -->
+    <section class="testimonios-section" id="testimonios">
+        <div class="container">
+            <h2 class="testimonios-title">Testimonios Destacados</h2>
+            
+            <p class="testimonios-intro">Nuestros Testimonios</p>
+            
+            <div class="testimonios-grid">
+                <!-- Testimonio 1 -->
+                <div class="testimonio-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    
+                    <div class="rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    
+                    <p class="testimonio-text">
+                        "En el Software de Rentas, el uso de firmas digitales, el uso de Whatsapp para enviar cuentas corrientes, notificaciones, recordatorios, etc. hace que esta herramienta sea muy útil."
+                    </p>
+                    
+                    <div class="testimonio-author-info">
+                        <img src="img/test_2.jpg" alt="Edison Orosco Castillo" class="testimonio-image">
+                        <h5 class="testimonio-author">Adm. Edison Orosco Castillo</h5>
+                        <p class="testimonio-position">Especialista en Gestión Tributaria Municipal</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="testimonio-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    
+                    <div class="rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    
+                    <p class="testimonio-text">
+                        "El equipo de SIAMsoft, se convierte en un aliado estratégico en las municipalidades, brinda un soporte técnico adecuado y oportuno, es un software super genial."
+                    </p>
+                    
+                    <div class="testimonio-author-info">
+                        <img src="img/tes_1.jpg" alt="Cesar Romero Verde" class="testimonio-image">
+                        <h5 class="testimonio-author">Econ. Cesar Romero Verde</h5>
+                        <p class="testimonio-position">Especialista en Gestión Municipal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+
+        
+
+
+/**
+         * Configura efectos de animación para las estrellas de calificación
+         */
+        function setupTestimonialStars() {
+            const stars = document.querySelectorAll('.rating .star');
+            
+            stars.forEach(star => {
+                star.addEventListener('mouseenter', function() {
+                    this.style.animation = 'rotateStar 0.8s ease-in-out';
+                });
+                
+                star.addEventListener('mouseleave', function() {
+                    this.style.animation = '';
+                });
+            });
+        }
+
+function initializeApp() {
+ // Configurar efectos para estrellas de calificación
+            setupTestimonialStars();
+
+}
+    </script>
+
+
+<!-- Carrusel de Imágenes Mejorado -->
+    <div class="container">
+        <h1 class="title">confía en Nosotros<span></span></h1>
+       
+        
+        <div class="divider"></div>
+        
+        <!-- Carrusel 3D Mejorado -->
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <!-- Las imágenes se generarán dinámicamente con JavaScript -->
+            </div>
+            
+            <button class="carousel-control prev" id="prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-control next" id="next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="carousel-indicators" id="indicators">
+            <!-- Los indicadores se generarán dinámicamente con JavaScript -->
+        </div>
+        
+      
+    </div>
+
+    <!-- Overlay para visualización de imagen completa -->
+    <div class="overlay" id="overlay">
+        <img src="" alt="" class="overlay-img" id="overlay-img">
+        <div class="close-btn" id="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('carousel');
+            const indicatorsContainer = document.getElementById('indicators');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+            const overlay = document.getElementById('overlay');
+            const overlayImg = document.getElementById('overlay-img');
+            const closeBtn = document.getElementById('close-btn');
+            
+            // Array con 10 imágenes de municipalidades (puedes reemplazar con tus propias imágenes)
+            const images = [
+                'img/1.png',
+                'img/catastro .png',
+                'img/cajas y rentas.png',
+                'img/catastro digital.png',
+                'img/8.png',
+               
+            ];
+            
+            const totalItems = images.length;
+            let currentIndex = 0;
+            let autoSlideInterval;
+            
+            // Crear elementos del carrusel
+            function createCarouselItems() {
+                carousel.innerHTML = '';
+                indicatorsContainer.innerHTML = '';
+                
+                // Crear elementos de carrusel
+                for (let i = 0; i < totalItems; i++) {
+                    const item = document.createElement('div');
+                    item.className = 'carousel-item';
+                    
+                    const img = document.createElement('img');
+                    img.src = images[i];
+                    img.alt = `Municipalidad ${i + 1}`;
+                    img.className = 'carousel-img';
+                    
+                    item.appendChild(img);
+                    carousel.appendChild(item);
+                    
+                    // Crear indicadores
+                    const indicator = document.createElement('div');
+                    indicator.className = 'indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => {
+                        stopAutoSlide();
+                        goToSlide(i);
+                        startAutoSlide();
+                    });
+                    indicatorsContainer.appendChild(indicator);
+                }
+                
+                updateCarousel();
+            }
+            
+            // Función para actualizar el carrusel
+            function updateCarousel() {
+                const items = document.querySelectorAll('.carousel-item');
+                const indicators = document.querySelectorAll('.indicator');
+                
+                items.forEach((item, index) => {
+                    // Calcular la posición relativa al índice actual
+                    let position = index - currentIndex;
+                    
+                    // Ajustar para el efecto de carrusel infinito
+                    if (position < -totalItems/2) position += totalItems;
+                    if (position > totalItems/2) position -= totalItems;
+                    
+                    // Aplicar transformaciones según la posición
+                    if (position === 0) {
+                        // Elemento central
+                        item.style.transform = 'translateX(0) scale(1)';
+                        item.style.opacity = '1';
+                        item.style.zIndex = '5';
+                        item.style.filter = 'blur(0)';
+                        item.classList.add('active');
+                    } else if (position === -1 || position === 1) {
+                        // Elementos adyacentes
+                        const translateX = position * 300;
+                        item.style.transform = `translateX(${translateX}px) scale(0.9)`;
+                        item.style.opacity = '0.8';
+                        item.style.zIndex = '4';
+                        item.style.filter = 'blur(1px)';
+                        item.classList.remove('active');
+                    } else if (position === -2 || position === 2) {
+                        // Elementos más lejanos
+                        const translateX = position * 300;
+                        item.style.transform = `translateX(${translateX}px) scale(0.85)`;
+                        item.style.opacity = '0.6';
+                        item.style.zIndex = '3';
+                        item.style.filter = 'blur(2px)';
+                        item.classList.remove('active');
+                    } else {
+                        // Elementos fuera de vista
+                        item.style.transform = 'translateX(800px) scale(0.8)';
+                        item.style.opacity = '0';
+                        item.style.zIndex = '2';
+                        item.style.filter = 'blur(3px)';
+                        item.classList.remove('active');
+                    }
+                });
+                
+                // Actualizar indicadores
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Función para ir a un slide específico
+            function goToSlide(index) {
+                currentIndex = index;
+                if (currentIndex < 0) currentIndex = totalItems - 1;
+                if (currentIndex >= totalItems) currentIndex = 0;
+                updateCarousel();
+            }
+            
+            // Función para abrir imagen en overlay
+            function openOverlay(imgSrc) {
+                overlayImg.src = imgSrc;
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Función para cerrar overlay
+            function closeOverlay() {
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Función para avanzar al siguiente slide
+            function nextSlide() {
+                goToSlide(currentIndex + 1);
+            }
+            
+            // Función para retroceder al slide anterior
+            function prevSlide() {
+                goToSlide(currentIndex - 1);
+            }
+            
+            // Función para iniciar la transición automática
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 3000); // Cambiar cada 3 segundos
+            }
+            
+            // Función para detener la transición automática
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+            
+            // Event listeners para botones de navegación
+            nextButton.addEventListener('click', function() {
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+            });
+            
+            prevButton.addEventListener('click', function() {
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+            });
+            
+            // Event listeners para las imágenes
+            carousel.addEventListener('click', function(e) {
+                const item = e.target.closest('.carousel-item');
+                if (item) {
+                    const imgSrc = item.querySelector('img').src;
+                    openOverlay(imgSrc);
+                }
+            });
+            
+            // Event listener para cerrar overlay
+            closeBtn.addEventListener('click', closeOverlay);
+            
+            // Cerrar overlay al hacer clic fuera de la imagen
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closeOverlay();
+                }
+            });
+            
+            // Pausar auto slide al pasar el ratón por encima
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            
+            // Reanudar auto slide al quitar el ratón
+            carousel.addEventListener('mouseleave', startAutoSlide);
+            
+            // Inicializar el carrusel y comenzar la transición automática
+            createCarouselItems();
+            startAutoSlide();
+            
+            // Navegación con teclado
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    stopAutoSlide();
+                    nextSlide();
+                    startAutoSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    stopAutoSlide();
+                    prevSlide();
+                    startAutoSlide();
+                } else if (e.key === 'Escape') {
+                    closeOverlay();
+                }
+            });
+        });
+    </script>
+
+
+
+    <!-- Contacto -->
+  <!-- Contact Section - Versión Adaptada -->
+<section class="contact" id="contacto">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contáctanos</h2>
+            <p>Estamos listos para transformar la gestión de tu municipalidad</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <p>Si deseas más información sobre nuestros sistemas o una demostración personalizada, no dudes en contactarnos.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <a href="tel:+51996909051">+51 996 909 051</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:informes.siamperu@hotmail.com">informes.siamperu@hotmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h4>Sitio Web</h4>
+                            <a href="http://www.siamsoft.com" target="_blank">www.siamsoft.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/SIAMSoftSftwareparamunicipalidades/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/siamsoft" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@siamsoft" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@siamsoft_peru" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm" onsubmit="enviarAGmail(event)">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico *</label>
+                        <input type="email" id="correo" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="municipalidad">Municipalidad</label>
+                        <input type="text" id="municipalidad">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="asunto">Asunto *</label>
+                        <select id="asunto" required>
+                            <option value="" disabled selected>Seleccione un tema</option>
+                            <option value="Consulta general">Consulta general</option>
+                            <option value="catastro urbano">Catastro urbano</option>
+                            <option value="beneficios para la municipálidad">Beneficios para la municipalidad</option>
+                            <option value="modulo de rentas municipales">Módulo de Rentas Municipales</option>
+                            <option value="modulo de Caja">Módulo de Caja</option>
+                            <option value="modulos de atención ciudadana">Módulos de Atención Ciudadana</option>
+                            <option value="Soporte técnico">Soporte técnico</option>
+                            <option value="Facturación">Facturación</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function enviarAGmail(event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById("nombre").value;
+        const correo = document.getElementById("correo").value;
+        const municipalidad = document.getElementById("municipalidad").value;
+        const asuntoSelect = document.getElementById("asunto");
+        const asunto = asuntoSelect.options[asuntoSelect.selectedIndex].text;
+        const mensaje = document.getElementById("mensaje").value;
+
+        const cuerpo =
+            `Nombre: ${nombre}\n` +
+            `Correo: ${correo}\n` +
+            `Municipalidad: ${municipalidad}\n` +
+            `Asunto: ${asunto}\n\n` +
+            `Mensaje:\n${mensaje}`;
+
+        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=informes.siamperu@hotmail.com&su=${encodeURIComponent(
+            asunto
+        )}&body=${encodeURIComponent(cuerpo)}`;
+
+        window.open(gmailLink, "_blank");
+    }
+</script>
+ <!-- footer -->
+
+<footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Columna 1: Información general -->
+                <div class="footer-column">
+                    <h3>SIAMsoft</h3>
+                    <p>Sistema integral de Administración Municipal - Transformando la gestión pública local a través de tecnología moderna y adaptada.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SIAMSoftSftwareparamunicipalidades/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/roberto-centeno-chicani-027a6612a/?originalSubdomain=pe"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/siamsoft"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Columna 2: Módulos -->
+                <div class="footer-column">
+                    <h3>Módulos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Gestión Tributaria y Caja</a></li>
+                        <li><a href="#">Catastro Urbano</a></li>
+                        <li><a href="#">Control de Asistencia y Planillas</a></li>
+                        <li><a href="#">Trámite Documentario</a></li>
+                        <li><a href="#">Archivo Central</a></li>
+                        <li><a href="#">Vaso de Leche</a></li>
+                        <li><a href="#">Registro Civil</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Columna 3: Enlaces rápidos -->
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Columna 4: Información de contacto -->
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Pasaje Washintong Nº107 Urb. Amauta</p>
+                    <br>
+                    <p><i class="fas fa-phone"></i> ‪+51 996 909 051‬</p>
+                    <br>
+                    <p><i class="fas fa-envelope"></i>  rs.siamsoft@gmail.com</p>
+                </div>
+            </div>
+            
+            <!-- Línea inferior con copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 SIAMsoft. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú móvil
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const municipalidad = document.getElementById('municipalidad').value;
+            const asunto = document.getElementById('asunto').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            const mailtoLink = `mailto:informes@siamsoft.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(
+                `Nombre: ${nombre}\nEmail: ${email}\nMunicipalidad: ${municipalidad}\n\nMensaje:\n${mensaje}`
+            )}`;
+            
+            window.location.href = mailtoLink;
+        });
+
+        // Animaciones al hacer scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.feature-card, .module-card, .benefits-container, .contact-container');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Inicializar elementos con opacidad 0
+        window.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.feature-card, .module-card, .benefits-container, .contact-container');
+            
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'all 0.5s ease-out';
+            });
+            
+            // Forzar primera animación
+            animateOnScroll();
+        });
+
+        // Escuchar evento scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+
+    <script src="js/chat.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
